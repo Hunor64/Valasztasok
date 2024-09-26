@@ -18,7 +18,7 @@ namespace Valasztasok.Pages
             _context = context;
         }
 
-        public IList<Jelolt> Jelolt { get;set; } = default!;
+        public IList<Jelolt> Jelolt { get; set; } = default!;
 
         public async Task OnGetAsync()
         {

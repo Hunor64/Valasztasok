@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Valasztasok.Models;
+using System.Linq;
 
 namespace Valasztasok.Pages
 {
@@ -36,7 +37,7 @@ namespace Valasztasok.Pages
                 var elemek = sor.Split(' ');
                 Jelolt ujJelolt = new();
                 Part ujPart;
-                if (!_context.Partok.Select(x => x.RovidNev == elemek[4]).First())
+                if (_context.Partok.Select(x => x.RovidNev == elemek[4]).First())
                 {
                     ujPart = new();
                     ujPart.RovidNev = elemek[4];
