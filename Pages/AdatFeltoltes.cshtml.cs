@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Valasztasok.Models;
 using System.Linq;
+using System.IO;
+
 
 namespace Valasztasok.Pages
 {
