@@ -37,11 +37,12 @@ namespace Valasztasok.Pages
                 var elemek = sor.Split(' ');
                 Jelolt ujJelolt = new();
                 Part ujPart;
-                if (_context.Partok.Select(x => x.RovidNev == elemek[4]).First())
+                if (!_context.Partok.Any(x => x.RovidNev == elemek[4]))
                 {
                     ujPart = new();
                     ujPart.RovidNev = elemek[4];
                     _context.Partok.Add(ujPart);
+                    await _context.SaveChangesAsync();
                 }
                 else
                 {
@@ -54,10 +55,9 @@ namespace Valasztasok.Pages
                 ujPart.RovidNev = elemek[4];
                 ujJelolt.Part = ujPart;
                 _context.Jeloltek.Add(ujJelolt);
-                _context.Partok.Add(ujPart);
             }
             sr.Close();
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Page();
         }
