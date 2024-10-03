@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Part[0].RovidNev)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Part[0].TeljesNev)
             </th>
             <th></th>
@@ -22,6 +25,9 @@
     <tbody>
 @foreach (var item in Model.Part) {
         <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RovidNev)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TeljesNev)
             </td>
