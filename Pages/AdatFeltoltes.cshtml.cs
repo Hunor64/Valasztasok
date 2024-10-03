@@ -31,7 +31,6 @@ namespace Valasztasok.Pages
             {
                 await UploadFile.CopyToAsync(stream);
             }
-
             StreamReader sr = new StreamReader(UploadFilePath);
             while (!sr.EndOfStream)
             {
@@ -54,6 +53,7 @@ namespace Valasztasok.Pages
                 ujJelolt.KeruletID = int.Parse(elemek[0]);
                 ujJelolt.SzavazatSzam = int.Parse(elemek[1]);
                 ujJelolt.KepviseloNev = $"{elemek[2]} {elemek[3]}";
+                ujJelolt.PartRovidNev = elemek[4];
                 ujPart.RovidNev = elemek[4];
                 ujJelolt.Part = ujPart;
                 _context.Jeloltek.Add(ujJelolt);
